@@ -1,16 +1,36 @@
-# registration_form
+# Multi-Page Registration Form
 
-A new Flutter project.
+## Description
 
-## Getting Started
+A Flutter application demonstrating navigation and form handling across multiple screens. Users can register by filling out a two-page form with validation. The application showcases proper state management, form validation, and data passing between screens in Flutter.
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- Multi-screen navigation with proper back stack management
+- Comprehensive form validation on all fields with user-friendly error messages
+- Data passing between screens using constructor parameters
+- Password confirmation with match validation
+- Age verification (must be 18 or older)
+- Gender selection via radio buttons
+- Responsive UI with SingleChildScrollView for small screens
+- Display of submitted registration data on home screen
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Screens
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. **Home Screen**: Welcome page with navigation to registration and display of submitted user data
+2. **Registration Page 1**: Personal information form (name, email, phone, password, confirm password)
+3. **Registration Page 2**: Additional information form (age, gender, country, bio)
+
+## Validation Rules
+
+- **Name**: Required, minimum 3 characters
+- **Email**: Required, valid email format (contains '@' and '.')
+- **Phone**: Required, minimum 10 digits, numeric only
+- **Password**: Required, minimum 6 characters
+- **Confirm Password**: Required, must match password exactly
+- **Age**: Required, must be 18 or older, numeric only
+- **Gender**: Required selection
+- **Country**: Required
+- **Bio**: Optional (can be empty)
+
+## Project Structure

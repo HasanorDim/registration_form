@@ -35,7 +35,7 @@ class ValidationHelper {
         ? 'Please enter a valid number'
         : age < 18
         ? 'Must be 18 and above years old'
-        : age > 120
+        : age > 60
         ? 'Old enough'
         : null;
   }

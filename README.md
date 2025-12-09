@@ -58,7 +58,7 @@ A Flutter application demonstrating navigation and form handling across multiple
 - **Phone**: Required, minimum 10 digits, numeric only
 - **Password**: Required, minimum 6 characters
 - **Confirm Password**: Required, must match password exactly
-- **Age**: Required, must be 18 or older, numeric only
+- **Age**: Required, must be 18-59 years old, numeric only
 - **Gender**: Required selection
 - **Country**: Required
 - **Bio**: Optional (can be empty)

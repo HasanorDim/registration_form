@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:registration_form/models/user_model.dart';
 import 'package:registration_form/screens/registration_page2.dart';
 import 'package:registration_form/utils/constants.dart';
+import 'package:registration_form/utils/validation_helper.dart';
 
 class RegistrationPage1 extends StatefulWidget {
   final User? existingUser;
@@ -233,15 +234,8 @@ class _RegistrationPage1State extends State<RegistrationPage1> {
                                     color: AppColors.textSecondary,
                                   ),
                                 ),
-                                validator: (value) {
-                                  if (value == null || value.isEmpty) {
-                                    return 'Please enter your full name';
-                                  }
-                                  if (value.length < 3) {
-                                    return 'Name must be at least 3 characters';
-                                  }
-                                  return null;
-                                },
+                                validator: (value) =>
+                                    ValidationHelper.validateName(value),
                               ),
                               const SizedBox(height: 20),
 
@@ -256,18 +250,8 @@ class _RegistrationPage1State extends State<RegistrationPage1> {
                                     color: AppColors.textSecondary,
                                   ),
                                 ),
-                                validator: (value) {
-                                  if (value == null || value.isEmpty) {
-                                    return 'Please enter your email';
-                                  }
-                                  final emailRegex = RegExp(
-                                    r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
-                                  );
-                                  if (!emailRegex.hasMatch(value)) {
-                                    return 'Please enter a valid email address';
-                                  }
-                                  return null;
-                                },
+                                validator: (value) =>
+                                    ValidationHelper.validateEmail(value),
                               ),
                               const SizedBox(height: 20),
 
@@ -282,19 +266,8 @@ class _RegistrationPage1State extends State<RegistrationPage1> {
                                     color: AppColors.textSecondary,
                                   ),
                                 ),
-                                validator: (value) {
-                                  if (value == null || value.isEmpty) {
-                                    return 'Please enter your phone number';
-                                  }
-                                  if (value.length < 10) {
-                                    return 'Phone number must be at least 10 digits';
-                                  }
-                                  final phoneRegex = RegExp(r'^[0-9]+$');
-                                  if (!phoneRegex.hasMatch(value)) {
-                                    return 'Please enter only numbers';
-                                  }
-                                  return null;
-                                },
+                                validator: (value) =>
+                                    ValidationHelper.validatePhone(value),
                               ),
                               const SizedBox(height: 20),
 
@@ -319,7 +292,9 @@ class _RegistrationPage1State extends State<RegistrationPage1> {
                                   ),
                                 ),
 
-                                validator: _validatePassword,
+                                // validator: _validatePassword,
+                                validator: (value) =>
+                                    ValidationHelper.validatePassword(value),
                               ),
                               const SizedBox(height: 20),
 
@@ -344,15 +319,11 @@ class _RegistrationPage1State extends State<RegistrationPage1> {
                                     },
                                   ),
                                 ),
-                                validator: (value) {
-                                  if (value == null || value.isEmpty) {
-                                    return 'Please confirm your password';
-                                  }
-                                  if (value != _passwordController.text) {
-                                    return 'Passwords do not match';
-                                  }
-                                  return null;
-                                },
+                                validator: (value) =>
+                                    ValidationHelper.validateConfirmPass(
+                                      value,
+                                      _passwordController.text,
+                                    ),
                               ),
 
                               const SizedBox(height: 40),

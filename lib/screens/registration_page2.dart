@@ -290,12 +290,8 @@ class _RegistrationPage2State extends State<RegistrationPage2> {
                                     color: AppColors.textSecondary,
                                   ),
                                 ),
-                                validator: (value) {
-                                  if (value == null || value.isEmpty) {
-                                    return 'Please enter your country or city';
-                                  }
-                                  return null;
-                                },
+                                validator: (value) =>
+                                    ValidationHelper.validateContry(value),
                               ),
 
                               const SizedBox(height: 20),
@@ -360,7 +356,7 @@ class _RegistrationPage2State extends State<RegistrationPage2> {
                                         ),
                                       ),
                                       child: Text(
-                                        isEditing ? 'Save Changes' : 'Complete',
+                                        isEditing ? 'Save Changes' : 'Submit',
                                         style: const TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.w600,

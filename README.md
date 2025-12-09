@@ -85,3 +85,14 @@ A Flutter application demonstrating navigation and form handling across multiple
 - `lib/services/storage_service.dart` - Storage service
 - `lib/utils/constants.dart` - App constants
 - `lib/utils/validation_helper.dart` - Validation helpers
+
+## How to Run
+
+- Clone the repository :
+
+```bash
+https://github.com/HasanorDim/registration_form
+```
+
+- Run flutter pub get
+- Run flutter run

@@ -29,15 +29,11 @@ A Flutter application demonstrating navigation and form handling across multiple
 | ----------------------------------------------- | --- |
 | <img src="screenshots/image10.png" width="200"> |     |
 
-#### When Editing
+### When Editing
 
 | Page1                                          | Page2                                          |
 | ---------------------------------------------- | ---------------------------------------------- |
 | <img src="screenshots/image8.png" width="200"> | <img src="screenshots/image9.png" width="200"> |
-
-| Page2                                          |                                                |
-| ---------------------------------------------- | ---------------------------------------------- |
-| <img src="screenshots/image6.png" width="200"> | <img src="screenshots/image7.png" width="200"> |
 
 #### Validation
 
